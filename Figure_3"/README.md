@@ -1,6 +1,6 @@
 ## Figure 3
 
-##  Bar plot for presenting phenotypic differeances in ASE and ASI cilia 
+##  Bar plot for presenting phenotypic difference in ASE and ASI cilia 
 
 
 #### Step 1: Upload required packages
