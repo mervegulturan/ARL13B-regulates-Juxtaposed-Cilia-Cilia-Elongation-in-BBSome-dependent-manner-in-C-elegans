@@ -67,7 +67,7 @@ fig_2p %>%
             panel.background = element_blank())
 ``` 
 
-#### Step 5: Apply Fisher's excat test as statistical analysis
+#### Step 5: Apply Fisher's exact test as statistical analysis
 
 ``` Java 
     library(rstatix)
