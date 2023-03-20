@@ -154,7 +154,71 @@ colnames(lenght4)
 
 ## Phenotype Analysis
 
-### SRB-6::GFP
+
+### Bar plot for IFT-74::GFP
+
+#### Step 1: Upload required packages
+
+``` Java  
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(tidyr)
+library(ggplot2)
+library(colorspace)
+library(forcats)
+library(readxl)
+```
+
+#### Step 2: Read excel file and check column names
+
+``` Java 
+  pheno4a<- read_xlsx("figure_4.xlsx", sheet=6)
+  colnames(pheno4a)
+```
+
+#### Step 3: Organize data
+
+``` Java 
+    level_order <- c("wt","arl-13","cdkl-1","ift-139","cdkl-1;arl-13" ,
+                     "ift-139;arl-13")
+    pheno4a <- pheno4a %>%
+      pivot_longer(
+        cols = c("wt","arl-13","cdkl-1","ift-139","cdkl-1;arl-13" ,
+                 "ift-139;arl-13"),
+        names_to = "Names",
+        values_to = "Value",
+        values_drop_na = TRUE)
+```
+
+#### Step 4: Draw bar plot using ggplot()
+
+``` Java 
+    pheno4a %>%
+      ggplot(aes(x=fct_relevel(Names,level = level_order),
+                 y=Value, fill= Phenotype)) +
+      geom_bar(aes(color = Phenotype,
+                   fill = after_scale(desaturate(lighten(color, 0.3), .3))),
+               size = 0.5, stat='identity', na.rm = TRUE) +
+      scale_color_manual(values=c("#cdf4c8","#9de0ab")) +
+      theme(axis.line = element_line(colour = "Black"),
+            panel.grid.major = element_line(colour = "White"),
+            panel.grid.minor = element_line(colour = "White"),
+            panel.border = element_blank(),
+            panel.background = element_blank())
+```
+
+#### Step 5: Apply Fisher's exact test as statistical analysis
+
+``` Java 
+  library(rstatix)
+  
+  fig_<- data.frame("wt"=c(34,5), "arl-13"=c(30,24),
+                    row.names = c("Normal", "Misdirection"))
+  pairwise_fisher_test(as.matrix(fig_), p.adjust.method = "fdr")
+```
+
+### Bar plot for SRB-6::GFP
 
 #### Step 1: Upload required packages
 
