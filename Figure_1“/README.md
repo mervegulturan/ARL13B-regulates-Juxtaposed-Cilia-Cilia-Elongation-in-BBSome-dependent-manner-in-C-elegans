@@ -39,7 +39,7 @@ fig_1 <- fig_1 %>%
     values_drop_na = TRUE)
 ```
 
-#### Step 4: 
+#### Step 4: Draw box plot using ggplot() and apply statistical analysis
 
 ``` Java
 fig_1 %>%
