@@ -2,7 +2,7 @@
 ## Figure 1
 
 ## PHA vs. PHB cilia lenght comparision 
-![Rplot](https://user-images.githubusercontent.com/96948625/226445761-d7dd026e-0364-4510-91ce-ff543b0311ed.jpeg)
+![Rplot](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/ecad92b4-690c-4de3-919f-396b2aaaf6b0)
 
 #### Step 1: Upload required packages
 
@@ -48,6 +48,7 @@ fig_1 %>%
   geom_boxplot(aes(color = Names,
                    fill = after_scale(desaturate(lighten(color, 0.4), .3))),
                size = 1,width=0.8)  +
+  scale_color_manual(values=c("#6698ff","#0da9dd")) +
   geom_jitter(width=0.1, alpha=0.5) +
   theme(axis.line = element_line(colour = "Black"),
         panel.grid.major = element_line(colour = "White"),
