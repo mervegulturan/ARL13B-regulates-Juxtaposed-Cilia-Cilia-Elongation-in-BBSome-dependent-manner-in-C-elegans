@@ -2,6 +2,7 @@
 
 ##  Bar plot for presenting phenotypic difference in ASE and ASI cilia 
 
+![Rplot01](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/da2de1a0-1c1f-49fb-b7cf-a27e4f27e23b)
 
 #### Step 1: Upload required packages
 
@@ -15,6 +16,7 @@ library(colorspace)
 library(forcats)
 library(readxl)
 ```
+
 
 #### Step 2: Read excel file and check column names
 
@@ -47,9 +49,9 @@ fig_3<- phenotype
     ggplot(aes(x=fct_relevel(Names,level = level_order),
                y=Value, fill= Phenotype)) +
     geom_bar(aes(color = Phenotype,
-                 fill = after_scale(desaturate(lighten(color, 0.3), .3))),
+                 fill = after_scale(desaturate(lighten(color, 0.6), .3))),
              size = 0.5, stat='identity', na.rm = TRUE) +
-    scale_color_manual(values=c("#cdf4c8","#9de0ab")) +
+    scale_color_manual(values=c("#47a6de","#0f599c")) +
     theme(axis.line = element_line(colour = "Black"),
           panel.grid.major = element_line(colour = "White"),
           panel.grid.minor = element_line(colour = "White"),
