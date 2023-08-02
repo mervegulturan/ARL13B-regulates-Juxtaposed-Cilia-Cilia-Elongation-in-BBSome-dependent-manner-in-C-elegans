@@ -53,17 +53,17 @@ fig_2p<- select(fig_2_p, c("WT", "bbs-5", "bbs-7","hdac-6; him-5",
 
 ``` Java 
 fig_2p %>%
-      ggplot(aes(x=fct_relevel(Names,level = level_order),
-                 y=Value, fill= Phenotype)) +
-      geom_bar(aes(color = Phenotype,
-                   fill = after_scale(desaturate(lighten(color, 0.3), .3))),
-               size = 0.5, stat='identity', na.rm = TRUE) +
-      scale_color_manual(values=c("#cdf4c8","#9de0ab")) +
-      theme(axis.line = element_line(colour = "Black"),
-            panel.grid.major = element_line(colour = "White"),
-            panel.grid.minor = element_line(colour = "White"),
-            panel.border = element_blank(),
-            panel.background = element_blank())
+  ggplot(aes(x=factor(Names,level = level_order),
+             y=Value, fill= Phenotype)) +
+  geom_bar(aes(color = Phenotype,
+               fill = after_scale(desaturate(lighten(color,  0.6), .3))),
+           size = 0.5, stat='identity', na.rm = TRUE) +
+  scale_color_manual(values=c("#47a6de","#0f599c")) +
+  theme(axis.line = element_line(colour = "Black"),
+        panel.grid.major = element_line(colour = "White"),
+        panel.grid.minor = element_line(colour = "White"),
+        panel.border = element_blank(),
+        panel.background = element_blank())
 ``` 
 
 #### Step 5: Apply Fisher's exact test as statistical analysis
