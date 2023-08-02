@@ -55,7 +55,7 @@ wt_my_comprasion <- list(c("wt","arl-13"),
 
 ``` Java 
     leng4a%>%
-      ggplot(aes(x=fct_relevel(Names,level = level_order ),
+      ggplot(aes(x=factor(Names,level = level_order ),
                  y=Value, fill= Names))+
       geom_boxplot(aes(color = Names,
                        fill = after_scale(desaturate(lighten(color, 0.4), .3))),
@@ -199,7 +199,7 @@ library(readxl)
 
 ``` Java 
   pheno4a %>%
-    ggplot(aes(x=fct_relevel(Names,level = level_order),
+    ggplot(aes(x=factor(Names,level = level_order),
                y=Value, fill= Phenotype)) +
     geom_bar(aes(color = Phenotype,
                  fill = after_scale(desaturate(lighten(color, 0.6), .3))),
@@ -264,7 +264,7 @@ pheno4_additional<- select (pheno4, c("WT","arl-13","nekl-4","dyf-5",
 
 ``` Java 
  pheno4_additional %>%
-      ggplot(aes(x=fct_relevel(Names,level = level_order),
+      ggplot(aes(x=factor(Names,level = level_order),
                  y=Value, fill= Phenotype)) +
       geom_bar(aes(color = Phenotype,
                    fill = after_scale(desaturate(lighten(color, 0.6), .3))),
