@@ -122,7 +122,7 @@ pheno7<- read_xlsx("figure_6.xlsx", sheet=3)
 
 ``` Java 
     pheno7 %>%
-      ggplot(aes(x=fct_relevel(Names,level = level_order),
+      ggplot(aes(x=factor(Names,level = level_order),
                  y=Value, fill= Phenotype)) +
       geom_bar(aes(color = Phenotype,
                    fill = after_scale(desaturate(lighten(color, 0.6), .3))),
