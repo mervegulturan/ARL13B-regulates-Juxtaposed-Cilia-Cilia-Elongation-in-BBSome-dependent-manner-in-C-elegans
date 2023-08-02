@@ -44,7 +44,7 @@ colnames(phenotype)
 
 ``` Java 
   fig_3 %>%
-    ggplot(aes(x=fct_relevel(Names,level = level_order),
+    ggplot(aes(x=factor(Names,level = level_order),
                y=Value, fill= Phenotype)) +
     geom_bar(aes(color = Phenotype,
                  fill = after_scale(desaturate(lighten(color, 0.6), .3))),
