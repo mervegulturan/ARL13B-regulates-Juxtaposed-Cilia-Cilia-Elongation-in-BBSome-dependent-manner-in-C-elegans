@@ -30,7 +30,6 @@ colnames(phenotype)
 #### Step 3: Organize data
 
 ``` Java 
-fig_3<- phenotype
   fig_3 <- fig_3 %>%
     pivot_longer(
       cols = c("WT","arl-13"),
