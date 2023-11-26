@@ -30,22 +30,22 @@ library(readxl)
 leng4a <- leng4a %>%
       pivot_longer(
         cols = c("wt","arl-13","cdkl-1","ift-139","mks-2","arl-13; cdkl-1",
-                 "arl-13; ift-139","mks-2; ift-139"),
+                 "arl-13; ift-139","mks-2; ift-139","mks-2;arl-13"),
         names_to = "Names",
         values_to = "Value",
         values_drop_na = TRUE)
 
 wt_my_comprasion <- list(c("wt","arl-13"),
                              c("wt", "ift-139"), c("wt", "cdkl-1"), c("wt", "mks-2"),
-                             c("wt", "arl-13; ift-139"), c("wt", "arl-13; cdkl-1"), c("wt", "mks-2; ift-139"))
+                             c("wt", "arl-13; ift-139"), c("wt", "arl-13; cdkl-1"), c("wt", "mks-2; ift-139"),c("wt", "mks-2;arl-13"))
     
     arl_13_my_comprasion <- list(c("arl-13", "arl-13; ift-139"),
                                  c("arl-13", "arl-13; cdkl-1"),
-                                 c("arl-13","mks-2; ift-139"))
+                                 c("arl-13","mks-2;arl-13"))
     
     other_my_comprasion2 <- list(c("ift-139","arl-13; ift-139"),c("ift-139","mks-2; ift-139"))
     other_my_comprasion3 <- list(c("cdkl-1","arl-13; cdkl-1"))
-    other_my_comprasion4 <- list(c("mks-2", "mks-2; ift-139"))
+    other_my_comprasion4 <- list(c("mks-2", "mks-2; ift-139"), c("mks-2","mks-2;arl-13"))
     
     level_order <- c("wt","arl-13", "cdkl-1","ift-139","mks-2",
                      "arl-13; cdkl-1", "arl-13; ift-139", "mks-2; ift-139")
@@ -185,11 +185,11 @@ library(readxl)
 
 ``` Java 
   level_order <- c("wt","arl-13","cdkl-1","ift-139","mks-2","cdkl-1;arl-13",
-                   "ift-139;arl-13","mks-2; ift-139")
+                   "ift-139;arl-13","mks-2; ift-139","mks-2;arl-13")
   pheno4a <- pheno4a %>%
     pivot_longer(
       cols = c("wt","arl-13","cdkl-1","ift-139","mks-2","cdkl-1;arl-13",
-               "ift-139;arl-13","mks-2; ift-139"),
+               "ift-139;arl-13","mks-2; ift-139", "mks-2;arl-13"),
       names_to = "Names",
       values_to = "Value",
       values_drop_na = TRUE)
