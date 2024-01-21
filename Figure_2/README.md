@@ -1,6 +1,7 @@
 ## Figure 2
 
 ##  Bar plot for presenting phenotypic differeances in single mutants
+![Presentation1](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/ce2ec542-2185-4f2d-b911-05178a4425eb)
 
 
 #### Step 1: Upload required packages
@@ -77,6 +78,9 @@ fig_2p %>%
 ```
 
 ##  Box plot for presenting cilia lenght results in single mutants
+
+![Presentation1](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/92f45a26-2885-418f-925c-cddfd6ed07b2)
+
 
 #### Step 1: Upload required packages
 
