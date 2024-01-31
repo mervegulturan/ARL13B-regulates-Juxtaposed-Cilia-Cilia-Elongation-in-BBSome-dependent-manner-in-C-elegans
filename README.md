@@ -1,1 +1,1 @@
-# BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans
+# ARL13B regulates Juxtaposed Cilia-Cilia Elongation in BBSome dependent manner in Caenorhabditis elegans
