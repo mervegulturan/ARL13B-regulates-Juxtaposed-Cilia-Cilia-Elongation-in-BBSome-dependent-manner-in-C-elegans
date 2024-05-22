@@ -1,6 +1,6 @@
 ## Figure 2
 
-##  Bar plot for presenting phenotypic differeances in single mutants
+##  Figure 2B-Bar plot for presenting phenotypic differeances in single mutants
 ![Presentation1](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/ce2ec542-2185-4f2d-b911-05178a4425eb)
 
 
@@ -77,7 +77,7 @@ fig_2p %>%
     pairwise_fisher_test(as.matrix(fig_), p.adjust.method = "fdr")
 ```
 
-##  Box plot for presenting cilia lenght results in single mutants
+##  Figure 2C-Box plot for presenting cilia length results in single mutants
 
 ![Presentation1](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/92f45a26-2885-418f-925c-cddfd6ed07b2)
 
@@ -151,4 +151,64 @@ fig_2_l %>%
                          label.y = 13, hide.ns = F)
  ```
  
+ ##  Figure 2E-Wt vs. arl-13 Cilia Length
  
+#### Step 1: Upload required packages
+
+``` Java  
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(tidyr)
+library(ggplot2)
+library(colorspace)
+library(forcats)
+library(readxl)
+```
+
+#### Step 2: Read excel file and check column names
+
+``` Java
+figure_2e<- read_xlsx("figure_2e.xlsx", sheet=1)
+colnames(figure_2e)
+```
+
+#### Step 3: Organize data
+
+``` Java
+comprasion1 <- list(c("Wild_Type_PHA","arl-13_PHA"))
+comprasion2 <- list(c("Wild_Type_PHB","arl-13_PHB"))
+
+level_order <- c("Wild_Type_PHA", "Wild_Type_PHB", "arl-13_PHA","arl-13_PHB")
+
+figure_2e <- figure_2e %>%
+  pivot_longer(
+    cols = c("Wild_Type_PHA", "Wild_Type_PHB", "arl-13_PHA","arl-13_PHB"),
+    names_to = "Names", 
+    values_to = "Value",
+    values_drop_na = TRUE)
+```  
+
+#### Step 4: Draw box plot using ggplot() and apply Wilcoxon paired test
+
+``` Java
+figure_2e %>%
+  ggplot(aes(x=factor(Names,level = level_order), 
+             y=Value, fill= Names))+
+  geom_boxplot(aes(color = Names,
+                   fill = after_scale(desaturate(lighten(color, 0.4), .3))),
+               size = 1,width=0.8)  +
+  geom_jitter(width=0.1, alpha=0.5) +
+  theme(axis.line = element_line(colour = "Black"),
+        panel.grid.major = element_line(colour = "White"),
+        panel.grid.minor = element_line(colour = "White"),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_text(angle=-270)) +
+  ylim(0,11) +
+  stat_compare_means(comparisons = comprasion1,label = "p.signif",
+                     label.y = 9.5, hide.ns = F)+
+  stat_compare_means(comparisons = comprasion2,label = "p.signif",
+                     label.y = 10.5, hide.ns = F)
+```
