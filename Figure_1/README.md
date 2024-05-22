@@ -1,7 +1,7 @@
 
 ## Figure 1
 
-##ASE vs. ASI cilia length comparison 
+## Figure 1B-ASE vs. ASI cilia length comparison 
 
 ![ase_ası](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/eb828e6d-26d5-446b-b944-0f8573506670)
 
@@ -65,7 +65,7 @@ fig_1_head %>%
 ```
 
 
-## PHA vs. PHB cilia length comparison 
+## Figure 1C-PHA vs. PHB cilia length comparison 
 ![Rplot](https://github.com/mervegulturan/BBSome-regulates-ARL13B-dependent-joint-elongation-of-two-distinct-cilia-in-C.-elegans/assets/96948625/ecad92b4-690c-4de3-919f-396b2aaaf6b0)
 
 #### Step 1: Upload required packages
