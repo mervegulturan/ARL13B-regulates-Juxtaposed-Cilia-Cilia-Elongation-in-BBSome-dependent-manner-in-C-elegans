@@ -81,8 +81,8 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-lenght6<- read_xlsx("figure_6.xlsx", sheet=1)
-    colnames(lenght6)
+Length6<- read_xlsx("figure_6.xlsx", sheet=1)
+    colnames(Length6)
 ```
 
  #### Step 3: Organize data
@@ -104,7 +104,7 @@ wt_my_comprasion <- list(c("wt","arl-13"),c("wt", "bbs-8"), c("wt", "kap-1"), c(
     level_order <- c( "wt","arl-13","bbs-8","ift-81","kap-1","arl-13; bbs-8",
                       "arl-13; ift-81","arl-13; kap-1")
     
-    lenght6 <- lenght6 %>%
+    Length6 <- Length6 %>%
       pivot_longer(
         cols = c("wt","arl-13","bbs-8","ift-81","kap-1","arl-13; bbs-8",
                  "arl-13; ift-81","arl-13; kap-1"),
@@ -116,7 +116,7 @@ wt_my_comprasion <- list(c("wt","arl-13"),c("wt", "bbs-8"), c("wt", "kap-1"), c(
 #### Step 4: Draw box plot using ggplot() and Wilcoxon paired test
 
 ``` Java 
-lenght6 %>%
+Length6 %>%
       ggplot(aes(x=factor(Names,level = level_order), 
                  y=Value, fill= Names))+
       geom_boxplot(aes(color = Names,
@@ -130,7 +130,7 @@ lenght6 %>%
             panel.background = element_blank(),
             axis.ticks.x=element_blank(),
             axis.text.x=element_text(angle=-270)) +
-      labs( y = "Cilia Lenght (µm)")  +
+      labs( y = "Cilia Length (µm)")  +
       ylim(0,18) +
       stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                          label.y = 17, hide.ns = F) +
