@@ -286,7 +286,7 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-  lenght5<- read_xlsx("figure_5e.xlsx", sheet=1)
+  lenght5<- read_xlsx("figure_S5.xlsx", sheet=1)
   colnames(lenght5)
 ```
 
@@ -367,7 +367,7 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-  pheno5<- read_xlsx("figure_5e.xlsx", sheet=3)
+  pheno5<- read_xlsx("figure_S5.xlsx", sheet=3)
   colnames(pheno5)
 ```
 
