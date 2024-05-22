@@ -132,9 +132,9 @@ pheno4_additional<- select (pheno4, c("WT","arl-13","nekl-4","dyf-5",
 ```
 
 
-## Figure 4B-Lenght Analysis
+## Figure 4B-Length Analysis
 
-###  Box plot for presenting cilia lenght of SRB-6::GFP
+###  Box plot for presenting cilia Length of SRB-6::GFP
 
 
 #### Step 1: Upload required packages
@@ -200,7 +200,7 @@ wt_my_comprasion <- list(c("wt","arl-13"),
             panel.background = element_blank(),
             axis.ticks.x=element_blank(),
             axis.text.x=element_text(angle=-270)) +
-      labs( y = "Cilia Lenght (µm)")+
+      labs( y = "Cilia Length (µm)")+
       ylim(0,18)+
       stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif" ,
                          label.y = 17.5, hide.ns = F) +
@@ -214,7 +214,7 @@ wt_my_comprasion <- list(c("wt","arl-13"),
                          label.y = 13, hide.ns = F)
 ```
 
-###  Box plot for presenting cilia lenght of IFT-74::GFP
+###  Box plot for presenting cilia Length of IFT-74::GFP
 
 #### Step 1: Upload required packages
 
@@ -232,14 +232,14 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java 
-lenght4<- read_xlsx("figure_4.xlsx", sheet=1)
-colnames(lenght4)
+Length4<- read_xlsx("figure_4.xlsx", sheet=1)
+colnames(Length4)
 ```
 
  #### Step 3: Organize data
 
 ``` Java 
-  lenght4_additional<- select (lenght4, c("wt","arl-13","nekl-4","dyf-5", "arl-13; nekl-4","arl-13; dyf-5" ))
+  Length4_additional<- select (Length4, c("wt","arl-13","nekl-4","dyf-5", "arl-13; nekl-4","arl-13; dyf-5" ))
 
  wt_my_comprasion <- list(c("wt","arl-13"), c("wt", "nekl-4"), c("wt", "dyf-5"),
                            c("wt",  "arl-13; nekl-4"), c("wt", "arl-13; dyf-5"))
@@ -251,7 +251,7 @@ colnames(lenght4)
   
   level_order <- c("wt", "arl-13", "nekl-4","dyf-5", "arl-13; nekl-4", "arl-13; dyf-5")
   
-lenght4_additional <- lenght4_additional %>%
+Length4_additional <- Length4_additional %>%
     pivot_longer(
       cols = c("wt", "arl-13", "nekl-4","dyf-5", "arl-13; nekl-4", "arl-13; dyf-5"),
       names_to = "Names", 
@@ -262,7 +262,7 @@ lenght4_additional <- lenght4_additional %>%
 #### Step 4: Draw box plot using ggplot() and Wilcoxon paired test
 
 ``` Java 
- lenght4_additional %>%
+ Length4_additional %>%
     ggplot(aes(x=factor(Names,level = level_order), 
                y=Value, fill= Names))+
     geom_boxplot(aes(color = Names,
@@ -276,7 +276,7 @@ lenght4_additional <- lenght4_additional %>%
           panel.background = element_blank(),
           axis.ticks.x=element_blank(),
           axis.text.x=element_text(angle=-270)) +
-    labs( y = "Cilia Lenght (µm)")  +
+    labs( y = "Cilia Length (µm)")  +
     ylim(0,18) +
     stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                        label.y = 16, hide.ns = F) +
