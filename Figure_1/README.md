@@ -58,7 +58,7 @@ fig_1_head %>%
           panel.background = element_blank(),
           axis.ticks.x=element_blank(),
           axis.text.x=element_text(angle=-270)) +
-    labs( y = "Cilia Lenght (µm)")  +
+    labs( y = "Cilia Length (µm)")  +
     ylim(0,10) +
     stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                        label.y = 9.5, hide.ns = F) 
@@ -121,7 +121,7 @@ fig_1 %>%
         panel.background = element_blank(),
         axis.ticks.x=element_blank(),
         axis.text.x=element_text(angle=-270)) +
-  labs( y = "Cilia Lenght (µm)")  +
+  labs( y = "Cilia Length (µm)")  +
   ylim(0,10) +
   stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                      label.y = 9, hide.ns = F)
