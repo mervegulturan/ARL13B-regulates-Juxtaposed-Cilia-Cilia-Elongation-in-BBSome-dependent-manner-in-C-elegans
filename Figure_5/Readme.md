@@ -68,14 +68,14 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-lenght5<- read_xlsx("figure_5.xlsx", sheet=1)
-    colnames(lenght5)
+Length5<- read_xlsx("figure_5.xlsx", sheet=1)
+    colnames(Length5)
 ```
 
  #### Step 3: Organize data
 
 ``` Java 
-data<- select(lenght5, c("wt","arl-13","mks-5","nphp-4","w07g1.5","w07g1.5; nphp-4","mks-s; nphp-4"))
+data<- select(Length5, c("wt","arl-13","mks-5","nphp-4","w07g1.5","w07g1.5; nphp-4","mks-s; nphp-4"))
     
     level_order <- c("wt","arl-13", "mks-5","nphp-4", "w07g1.5","w07g1.5; nphp-4","mks-s; nphp-4")
     
@@ -111,7 +111,7 @@ data %>%
             panel.background = element_blank(),
             axis.ticks.x=element_blank(),
             axis.text.x=element_text(angle=-270)) +
-      labs( y = "Cilia Lenght (µm)")  +
+      labs( y = "Cilia Length (µm)")  +
       ylim(0,18) +
       stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                          label.y = 17, hide.ns = F) +
@@ -141,8 +141,8 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-lenght5d<- read_xlsx("dendride_lenght.xlsx", sheet=1)
-    colnames(lenght5d)
+Length5d<- read_xlsx("dendride_lenght.xlsx", sheet=1)
+    colnames(Length5d)
 ```
 
  #### Step 3: Organize data
@@ -151,7 +151,7 @@ lenght5d<- read_xlsx("dendride_lenght.xlsx", sheet=1)
     level_order <- c("wt","arl-13","mks-5","nphp-4","rpi-1","rpi-1;nphp-4","mks-5;nphp-4")
     
     
-    lenght5d <- lenght5d %>%
+    Length5d <- Length5d %>%
       pivot_longer(
         cols = c("wt","arl-13","rpi-1","nphp-4","mks-5","rpi-1;nphp-4","mks-5;nphp-4"),
         names_to = "Names",
@@ -170,7 +170,7 @@ lenght5d<- read_xlsx("dendride_lenght.xlsx", sheet=1)
 #### Step 4: Draw box plot using ggplot() and Wilcoxon paired test
 
 ``` Java
-lenght5d %>%
+Length5d %>%
       ggplot(aes(x=factor(Names,level = level_order), 
                  y=Value, fill= Names))+
       geom_boxplot(aes(color = Names,
@@ -184,7 +184,7 @@ lenght5d %>%
             panel.background = element_blank(),
             axis.ticks.x=element_blank(),
             axis.text.x=element_text(angle=-270)) +
-      labs( y = "Dendride Lenght (µm)")  +
+      labs( y = "Dendride Length (µm)")  +
       ylim(0,40) +
       stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                          label.y = 38, hide.ns = F) +
@@ -256,7 +256,7 @@ misposition %>%
             panel.background = element_blank(),
             axis.ticks.x=element_blank(),
             axis.text.x=element_text(angle=-270)) +
-      labs( y = "Cilia Lenght (µm)")  +
+      labs( y = "Cilia Length (µm)")  +
       ylim(0,10) +
       stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                          label.y = 9, hide.ns = F) +
@@ -270,7 +270,7 @@ misposition %>%
 
 ## Figure S5
 
-## Lenght Analysis
+## Length Analysis
 #### Step 1: Upload required packages
 
 ``` Java  
@@ -286,8 +286,8 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-  lenght5<- read_xlsx("figure_S5.xlsx", sheet=1)
-  colnames(lenght5)
+  Length5<- read_xlsx("figure_S5.xlsx", sheet=1)
+  colnames(Length5)
 ```
 
  #### Step 3: Organize data
@@ -310,7 +310,7 @@ wt_my_comprasion <- list(c("wt","arl-13"), c("wt", "nphp-2"),
                      "hdac-6; him-5",
                      "nphp-2;hdac-6", "arl-13; hdac-6", "Arl-13; hdac-6; nphp-2")
     
-    lenght5 <- lenght5 %>%
+    Length5 <- Length5 %>%
       pivot_longer(
         cols = c("wt", "arl-13", "nphp-2",
                  "hdac-6; him-5",
@@ -323,7 +323,7 @@ wt_my_comprasion <- list(c("wt","arl-13"), c("wt", "nphp-2"),
 #### Step 4: Draw box plot using ggplot() and Wilcoxon paired test
 
 ``` Java 
-lenght5 %>%
+Length5 %>%
       ggplot(aes(x=factor(Names,level = level_order), 
                  y=Value, fill= Names))+
       geom_boxplot(aes(color = Names,
@@ -337,7 +337,7 @@ lenght5 %>%
             panel.background = element_blank(),
             axis.ticks.x=element_blank(),
             axis.text.x=element_text(angle=-270)) +
-      labs( y = "Cilia Lenght (µm)")  +
+      labs( y = "Cilia Length (µm)")  +
       ylim(0,18) +
       stat_compare_means(comparisons = wt_my_comprasion,label = "p.signif",
                          label.y = 16, hide.ns = F) +
