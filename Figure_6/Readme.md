@@ -296,8 +296,8 @@ library(readxl)
 
 #### Step 2: Read excel file and check column names
 ``` Java
-Length7s<- read_xlsx("figure_S7.xlsx", sheet=1)
-colnames(Length7s)
+Length8s<- read_xlsx("figure_S8.xlsx", sheet=1)
+colnames(Length8s)
 ```
 
 #### Step 3: Organize data
@@ -312,7 +312,7 @@ bbs_8_my_comprasion <- list(c("bbs_8", "bbs_8_mks_5"))
 
 mks_5_my_comprasion <- list(c("mks_5","bbs_8_mks_5"))
 
-Length7s <- Length7s %>%
+Length8s <- Length8s %>%
   pivot_longer(
     cols = c("wt", "bbs_8","mks_5","bbs_8_mks_5"),
     names_to = "Names",
@@ -324,7 +324,7 @@ Length7s <- Length7s %>%
 #### Step 4: Draw box plot using ggplot() and Wilcoxon paired test
 
 ``` Java
-Length7s %>%
+Length8s %>%
   ggplot(aes(x=factor(Names,level = level_order), 
              y=Value, fill= Names))+
   geom_boxplot(aes(color = Names,
@@ -366,15 +366,15 @@ library(readxl)
 #### Step 2: Read excel file and check column names
 
 ``` Java
-pheno7S<- read_xlsx("figure_S7.xlsx", sheet=3)
-colnames(pheno7S)
+pheno8S<- read_xlsx("figure_S8.xlsx", sheet=3)
+colnames(pheno8S)
 ```
 
 #### Step 3: Organize data
 
 ``` Java
 
-pheno7S <- pheno7S %>%
+pheno8S <- pheno8S %>%
   pivot_longer(
     cols = c("wt", "bbs_8","mks_5","bbs_8_mks_5"),
     names_to = "Names",
@@ -387,7 +387,7 @@ level_order <- c("wt", "bbs_8","mks_5","bbs_8_mks_5")
 #### Step 4: Draw bar plot using ggplot()
 
 ``` Java
-pheno6S %>%
+pheno8S %>%
   ggplot(aes(x=factor(Names,level = level_order),
              y=Value, fill= Phenotype)) +
   geom_bar(aes(color = Phenotype,
