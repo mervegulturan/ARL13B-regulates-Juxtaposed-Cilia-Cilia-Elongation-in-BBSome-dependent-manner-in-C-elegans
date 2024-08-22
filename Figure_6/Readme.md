@@ -280,7 +280,7 @@ Length7 %>%
 -------------------------------------------------------------------------------
 ## Figure S8
 
-## Figure S8A-Length Analysis
+## Figure S8B-Length Analysis
 
 #### Step 1: Upload required packages
 
@@ -348,7 +348,7 @@ Length8s %>%
                      label.y = 14, hide.ns = F)
 ```
 
-## Figure S8B-Phenotype Analysis
+## Figure S8C-Phenotype Analysis
 
 #### Step 1: Upload required packages
 
