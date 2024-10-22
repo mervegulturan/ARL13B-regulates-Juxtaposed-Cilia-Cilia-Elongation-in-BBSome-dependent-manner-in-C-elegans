@@ -50,6 +50,7 @@ fig_1_head %>%
                      fill = after_scale(desaturate(lighten(color, 0.4), .3))),
                  size = 1,width=0.8)  +
     scale_color_manual(values=c("#6698ff","#0da9dd")) +
+  stat_boxplot(aes(group = Names), geom = "errorbar", position = "dodge",width = 0.2, size = 0.5, col = "#660033") +
     geom_jitter(width=0.1, alpha=0.5) +
     theme(axis.line = element_line(colour = "Black"),
           panel.grid.major = element_line(colour = "White"),
@@ -112,6 +113,7 @@ fig_1 %>%
   geom_boxplot(aes(color = Names,
                    fill = after_scale(desaturate(lighten(color, 0.4), .3))),
                size = 1,width=0.8)  +
+  stat_boxplot(aes(group = Names), geom = "errorbar", position = "dodge",width = 0.2, size = 0.5, col = "#660033") +
   scale_color_manual(values=c("#6698ff","#0da9dd")) +
   geom_jitter(width=0.1, alpha=0.5) +
   theme(axis.line = element_line(colour = "Black"),
